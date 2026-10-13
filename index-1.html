@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malak Ashraf | Meta Ads, Data and Programming</title>
+<meta name="description" content="Portfolio of Malak Ashraf, a Physics and Computer Science student building skills in Meta Ads, tracking and data analysis.">
+
+<!-- ============================================================
+     META PIXEL: paste your Pixel base code right below this comment.
+     (Events Manager > your Pixel > Install > Install code manually)
+     Remove this note after pasting.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #eef1f5;
+  --ink: #14213d;
+  --muted: #4a5670;
+  --line: #cfd6e2;
+  --accent: #0f766e;
+  --accent-ink: #ffffff;
+  --mark: #f2b544;
+  --card: #ffffff;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1626;
+    --ink: #eaf0fb;
+    --muted: #a9b4cc;
+    --line: #26324d;
+    --accent: #2dd4bf;
+    --accent-ink: #0f1626;
+    --card: #162039;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--mark);
+  outline-offset: 3px;
+}
+.wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+header.top { padding: 1.5rem 0; }
+header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 700; text-decoration: none; font-size: 1.15rem; }
+nav a { margin-left: 1.25rem; text-decoration: none; color: var(--muted); }
+nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+.hero { padding: 3rem 0 4rem; }
+.hero .wrap { display: grid; gap: 3rem; grid-template-columns: 1.15fr 0.85fr; align-items: center; }
+h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+.lede { color: var(--muted); max-width: 34rem; margin: 0 0 2rem; }
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); margin-left: 0.5rem; }
+
+.funnel { margin: 0; }
+.funnel .row { margin-bottom: 0.9rem; }
+.funnel .bar {
+  height: 2.6rem;
+  border-radius: 0.4rem;
+  background: var(--accent);
+  transform-origin: left center;
+  animation: grow 0.9s cubic-bezier(.2,.7,.2,1) both;
+}
+.funnel .row:nth-child(1) .bar { width: 100%; opacity: 0.35; }
+.funnel .row:nth-child(2) .bar { width: 64%; opacity: 0.65; animation-delay: .15s; }
+.funnel .row:nth-child(3) .bar { width: 28%; animation-delay: .3s; }
+.funnel .label { margin-top: 0.3rem; font-size: 0.95rem; color: var(--muted); }
+.funnel figcaption { margin-top: 1.25rem; font-size: 0.95rem; color: var(--muted); border-left: 4px solid var(--mark); padding-left: 0.9rem; }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { .funnel .bar { animation: none; } html { scroll-behavior: auto; } }
+
+section.block { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+h2 { font-family: var(--display); font-size: 1.8rem; letter-spacing: -0.01em; margin: 0 0 1.25rem; }
+h3.group { font-family: var(--display); font-size: 1.05rem; margin: 0 0 0.4rem; }
+.cols { display: grid; gap: 2.5rem; grid-template-columns: 1fr 1fr; }
+.prose { max-width: 38rem; }
+.prose p { margin: 0 0 1rem; }
+
+ul.skills { list-style: none; margin: 0 0 1.75rem; padding: 0; }
+ul.skills li { padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
+
+.edu { margin: 0 0 1.5rem; }
+.edu strong { display: block; font-family: var(--display); font-size: 1.1rem; }
+.edu span { color: var(--muted); }
+
+.log { display: grid; gap: 1rem; }
+.entry {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 1rem;
+  align-items: start;
+}
+.entry h3 { margin: 0; font-family: var(--display); font-size: 1.1rem; }
+.entry p { grid-column: 1 / -1; margin: 0.3rem 0 0; color: var(--muted); font-size: 0.98rem; }
+.status {
+  font-size: 0.85rem;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 0.1rem 0.7rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.status.done { border-color: var(--accent); color: var(--accent); }
+.note { color: var(--muted); font-size: 0.95rem; margin-top: 1.25rem; }
+
+footer { padding: 2.5rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+
+@media (max-width: 760px) {
+  .hero .wrap, .cols { grid-template-columns: 1fr; }
+  .btn.ghost { margin-left: 0; margin-top: 0.6rem; }
+  nav a:first-child { margin-left: 0; }
+}
+</style>
+</head>
+
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Malak Ashraf</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#tests">Test log</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>I'm learning to run Meta ads like a scientist: test, measure, repeat.</h1>
+        <p class="lede">I'm Malak, a Physics and Computer Science student at Ain Shams University. I'm building my skills in Meta Ads, tracking and data analysis, and I'm looking for my first professional experience.</p>
+        <a class="btn" href="#tests">See my test log</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <figure class="funnel" aria-label="Funnel from ad views to conversions">
+        <div class="row"><div class="bar"></div><div class="label">People who see the ad</div></div>
+        <div class="row"><div class="bar"></div><div class="label">People who click</div></div>
+        <div class="row"><div class="bar"></div><div class="label">People who convert</div></div>
+        <figcaption>I measure each campaign along this path with the Meta Pixel, and this site is tracked the same way.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap cols">
+      <div><h2>About</h2></div>
+      <div class="prose">
+        <p>I study Physics and Computer Science, and I'm interested in data analysis, data visualization, digital marketing and programming. Media buying lets me use all of them: read the numbers, make a guess, and test it with a small budget.</p>
+        <p>I'm looking for a first role where I can learn from a team, contribute, and grow into running and reporting on Meta campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap cols">
+      <div><h2>Skills</h2></div>
+      <div>
+        <h3 class="group">Meta Ads topics I've covered</h3>
+        <ul class="skills">
+          <li>Meta Business Manager and Ads Manager</li>
+          <li>Campaign objectives and audience targeting</li>
+          <li>Budget and bidding</li>
+          <li>Meta Pixel and Conversions API</li>
+          <li>Metrics and analytics</li>
+          <li>Ad creatives and copywriting</li>
+          <li>A/B testing</li>
+        </ul>
+
+        <h3 class="group">Design, data and programming</h3>
+        <ul class="skills">
+          <li>Social media and marketing designs in Canva</li>
+          <li>Microsoft Office: Word, PowerPoint, Excel</li>
+          <li>C++ programming</li>
+          <li>Learning Python, data analysis and data visualization</li>
+        </ul>
+
+        <h3 class="group">Working style and languages</h3>
+        <ul class="skills">
+          <li>Communication, teamwork, organization and time management</li>
+          <li>English (upper-intermediate), German (basic)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="wrap cols">
+      <div><h2>Education</h2></div>
+      <div>
+        <div class="edu">
+          <strong>Faculty of Science, Girls' College, Ain Shams University</strong>
+          <span>Physics and Computer Science, 2024 to present</span>
+        </div>
+        <div class="edu">
+          <strong>German Language Course (Level 1)</strong>
+          <span>Komet Institute</span>
+        </div>
+        <p class="note">Outside study: reading, cooking, sports and fitness, technology and programming, and learning new skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tests">
+    <div class="wrap">
+      <h2>Test log</h2>
+      <div class="log">
+        <!-- EDIT: replace each entry with your real test. Change "Planned" to "Done" and add the result. -->
+        <article class="entry">
+          <h3>Creative test: image vs video</h3>
+          <span class="status">Planned</span>
+          <p>Same audience and budget, two creatives. Goal: find out which one gets the cheaper click.</p>
+        </article>
+        <article class="entry">
+          <h3>Audience test: broad vs interest targeting</h3>
+          <span class="status">Planned</span>
+          <p>Same ad shown to two audience types. Goal: compare cost per result.</p>
+        </article>
+        <article class="entry">
+          <h3>Budget test: slow increase vs sudden jump</h3>
+          <span class="status">Planned</span>
+          <p>Goal: see how each way of raising the budget affects results.</p>
+        </article>
+      </div>
+      <p class="note">These are the tests I'm running next. I replace each one with the real setup, numbers and what I learned as I finish it.</p>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap cols">
+      <div><h2>Contact</h2></div>
+      <div class="prose">
+        <p>Open to internships, junior roles and small projects in digital marketing and data.</p>
+        <p>
+          <a class="btn" id="mail" href="#contact">Email me</a>
+          <!-- EDIT: paste your real LinkedIn profile link in href below -->
+          <a class="btn ghost" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Malak Ashraf</div>
+</footer>
+
+<script>
+/* Builds the email link in the browser so the address isn't sitting in the page text for spam bots. */
+(function () {
+  var user = "maalaakashraaf", host = "gmail.com";
+  var link = document.getElementById("mail");
+  if (link) link.href = "mail" + "to:" + user + "@" + host;
+})();
+</script>
+</body>
+</html>
