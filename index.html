@@ -281,7 +281,7 @@ footer { padding: 2.5rem 0 3rem; border-top: 1px solid var(--line); color: var(-
       <div class="log">
         <!-- EDIT: replace each entry with your real test. Change "Planned" to "Done" and add the result. -->
         <article class="entry">
-          <h3>Creative test: image vs video</h3>
+          <h3><a href="case-study-1.html">Creative test: image vs video</a></h3>
           <span class="status">Planned</span>
           <p>Same audience and budget, two creatives. Goal: find out which one gets the cheaper click.</p>
         </article>
@@ -327,5 +327,33 @@ footer { padding: 2.5rem 0 3rem; border-top: 1px solid var(--line); color: var(-
   if (link) link.href = "mail" + "to:" + user + "@" + host;
 })();
 </script>
-</body>
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a');
+  if (!a || typeof fbq !== 'function') return;
+  if (a.id === 'mail') fbq('track', 'Contact');
+  else if (a.href.indexOf('linkedin.com') > -1) fbq('trackCustom', 'LinkedInClick');
+});
+</script><script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a');
+  if (!a || typeof fbq !== 'function') return;
+  if (a.id === 'mail') fbq('track', 'Contact');
+  else if (a.href.indexOf('linkedin.com') > -1) fbq('trackCustom', 'LinkedInClick');
+});
+</script><script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a');
+  if (!a || typeof fbq !== 'function') return;
+  if (a.id === 'mail') fbq('track', 'Contact');
+  else if (a.href.indexOf('linkedin.com') > -1) fbq('trackCustom', 'LinkedInClick');
+});
+</script><script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a');
+  if (!a || typeof fbq !== 'function') return;
+  if (a.id === 'mail') fbq('track', 'Contact');
+  else if (a.href.indexOf('linkedin.com') > -1) fbq('trackCustom', 'LinkedInClick');
+});
+</script></body>
 </html>
